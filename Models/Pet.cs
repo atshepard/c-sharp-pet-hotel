@@ -5,7 +5,13 @@ using System;
 
 namespace pet_hotel
 {
-    public enum PetBreedType {}
-    public enum PetColorType {}
-    public class Pet {}
+    public enum PetBreedType {
+
+    }
+    public enum PetColorType {
+
+    }
+    public class Pet {
+        
+    }
 }
