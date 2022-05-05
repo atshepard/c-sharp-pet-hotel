@@ -41,6 +41,7 @@ namespace pet_hotel.Controllers
             }
 
             _context.Remove(ownerToDelete);
+            
             _context.SaveChanges();
 
             return NoContent();
