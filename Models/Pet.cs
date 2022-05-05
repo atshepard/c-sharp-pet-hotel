@@ -5,13 +5,44 @@ using System;
 
 namespace pet_hotel
 {
-    public enum PetBreedType {
-
+    public enum PetBreedType
+    {
+        Shepherd,
+        Poodle,
+        Beagle,
+        Bulldog,
+        Terrier,
+        Boxer,
+        Labrador,
+        Retriever
     }
-    public enum PetColorType {
-
+    public enum PetColorType
+    {
+        White,
+        Black,
+        Golden,
+        Tricolor,
+        Spotted
     }
-    public class Pet {
-        
+    public class Pet
+    {
+
+        public int id { get; set; }
+
+        public string name { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public PetColorType color { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+
+        public PetBreedType breed { get; set; }
+
+        [ForeignKey("petOwner")]
+
+        public int owner_id { get; set; }
+
+        public PetOwner petOwner { get; set; }
+
     }
 }

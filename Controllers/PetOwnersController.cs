@@ -31,5 +31,20 @@ namespace pet_hotel.Controllers
             return owner;
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var ownerToDelete = _context.PetOwnerTable.SingleOrDefault(petOwner => petOwner.id == id);
+
+            if (ownerToDelete == null) {
+                return NotFound();
+            }
+
+            _context.Remove(ownerToDelete);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
     }
 }
